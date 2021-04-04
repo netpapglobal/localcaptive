@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>redirect</title>
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+    <div class="container">
+      <div class="row h-100">
+        <div class="offset-md-3"></div>
+        <div class="col-md-4 col-sm-12 col-xs-12 align-self-center" id="col">
+
+
+        <div class="card card-block  mx-auto" >
+          <img src="redirect/redirect.png" class="card-img-top" alt="...">
+        $(if chap-id)
+        <noscript>
+        <center><b>JavaScript required. Enable JavaScript to continue.</b></center>
+        </noscript>
+        $(endif)
+          <div class="card-body">
+            <h5 class="card-title">Hang Tight!</h5>
+            <p class="card-text">redirecting...</p>
+            <p>If you are not redirected in a few seconds, click 'continue' below</p>
+            <form name="redirect" action="http://m.netpap.co.ke/management/login/" method="GET">
+              <input type="hidden" name="mac" value="$(mac)">
+              <input type="hidden" name="ip" value="$(ip)">
+              <input type="hidden" name="username" value="$(username)">
+              <input type="hidden" name="hotspot" value="<Station code">
+              
+              <input type="hidden" name="linklogin" value="$(link-login)">
+              <input type="hidden" name="linkorig" value="$(link-orig)">
+              <input type="hidden" name="error" value="$(error)">
+              <input type="hidden" name="chapid" value="$(chap-id)">
+              <input type="hidden" name="chapchallenge" value="$(chap-challenge)">
+              <input type="hidden" name="linkloginonly" value="$(link-login-only)">
+              <input type="hidden" name="linkorigesc" value="$(link-orig-esc)">
+              <input type="hidden" name="macesc" value="$(mac-esc)">
+              <input type="submit" class="btn btn-primary" value="continue">
+            </form>
+          </div>
+    
+          <div class="card-footer">
+            <div id="particles-js">
+              <p>powered by: Netpap</p>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    
+    <script language="JavaScript">
+      <!--
+         document.redirect.submit();
+      //-->
+      </script>
+    <script src="static/js/particles.min.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+</html>
