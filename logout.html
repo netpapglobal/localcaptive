@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout</title>
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+    <script language="JavaScript">
+		<!--
+			function openLogin() {
+			if (window.name != 'hotspot_logout') return true;
+			open('$(link-login)', '_blank', '');
+			window.close();
+			return false;
+			}
+		//-->
+		</script>
+    <div class="container">
+      <div class="row h-100">
+        <div class="offset-md-3"></div>
+        <div class="col-md-4 col-sm-12 col-xs-12 align-self-center" id="col">
+
+
+        <div class="card card-block  mx-auto" >
+          <img src="/static/images/redirect.png" class="card-img-top" alt="...">
+            
+          <div class="card-body">
+            <h5 class="card-title">Thank You</h5>
+            <p class="card-text">You have logged out</p>
+            <table class="table table-bordered table-condensed">
+                <tr><td align="right">Username</td><td width="20px" class="text-center">:</td><td>$(username)</td></tr>
+                <tr><td align="right">IP Address</td><td width="20px" class="text-center">:</td><td>$(ip)</td></tr>
+                <tr><td align="right">MAC Address</td><td width="20px" class="text-center">:</td><td>$(mac)</td></tr>
+                <tr><td align="right">Session Time</td><td width="20px" class="text-center">:</td><td>$(uptime)</td></tr>
+                $(if session-time-left)
+                <tr><td align="right">Time left</td><td width="20px" class="text-center">:</td><td>$(session-time-left)</td></tr>
+                $(endif)
+                <tr><td align="right">Bytes up/down</td><td width="20px" class="text-center">:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+            </table>
+
+            <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-success btn-block">Start Session</button>
+                </div>
+                <div class="col-sm-6">
+                    <a class="btn btn-info" style="font-size:13px;" href="https://v3.netpap.co.ke/netpap/pay/<station name>/">Buy More</a>
+                    </div>
+            </form>
+          </div>
+    
+          <div class="card-footer">
+            <div id="particles-js">
+              <p>powered by: Netpap</p>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <script src="static/js/particles.min.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout</title>
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+    <script language="JavaScript">
+		<!--
+
+			function openLogout() {
+			if (window.name != 'hotspot_status') return true;
+			open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+			window.close();
+			return false;
+			}
+		//-->
+		</script>
+    <div class="container">
+      <div class="row h-100">
+        <div class="offset-md-3"></div>
+        <div class="col-md-8 col-sm-12 col-xs-12 align-self-center" id="col">
+
+
+        <div class="card card-block  mx-auto" >
+          <img src="/static/images/redirect.png" class="card-img-top" alt="...">
+            
+          <div class="card-body">
+      
+                $(if login-by == 'trial')
+                <h3 class="card-title">Welcome trial user!</h3>
+            $(elif login-by != 'mac')
+                <h3 class="card-title">Welcome $(username)!</h3>
+            $(endif)
+     
+            <hr/>
+            <p class="card-text">Enjoy your connections.</p>
+            <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+                <table class="table table-bordered table-condensed">
+                    <tr><td align="right">IP Address</td>
+                    <td width="20px" class="text-center">:</td><td>$(ip)</td></tr>
+                    <tr><td align="right">Bytes up/down</td>
+                    <td class="text-center">:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td> </tr>
+                    <tr id="cs"><td align="right">Consumed/Remaining/purchased</td>
+                    <td class="text-center">:</td><td><span id="consumed"></span> / <span id="remaining"></span> /<span id="purchased"></span> </td> </tr>
+  
+                         $(if session-time-left)
+                    <tr><td align="right">Connected / Left</td>
+                    <td class="text-center">:</td><td>$(uptime) / $(session-time-left)</td></tr>
+                         $(else)
+                    <tr><td align="right">Connected</td>
+                    <td class="text-center">:</td><td>$(uptime) </td></tr>
+                        $(endif)
+                </table>
+                $(if login-by-mac != 'yes')
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <button type="submit" class="btn btn-primary btn-block">Stop Session</button>
+                    </div>
+                    <div class="col-sm-6">
+                    <a class="btn btn-info" id="buymore" style="font-size:13px;" data-username="$(username)" href="https://v3.netpap.co.ke/netpap/pay/<station code>/">Buy More</a>
+                    </div>
+                </div>
+              $(endif)
+            </form>
+          </div>
+    
+          <div class="card-footer">
+            <div id="particles-js">
+              <p>powered by: Netpap</p>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <script src="/static/js/jquery-2.1.1.min.js"></script>
+    <script src="static/js/particles.min.js"></script>
+    <script src="static/js/app.js"></script>
+ 
+    <!-- <script>
+      $(document).ready(function(){
+        $("#cs").hide();
+        $.ajax({
+          url:"https://v3.netpap.co.ke/api/client/bw/",
+          data:{"typ":"T","username":$("#buymore").attr("data-username")},
+          method:"GET",
+          dataType:"json",
+          headers: {
+              "accept": "application/json",
+              "Access-Control-Allow-Origin":"*"
+          }
+        }).done(function(d){
+          console.log(d,"here")
+          if(d['show']){
+            $("#cs").show()
+          $("#consumed").html(d['consumed'])
+          $("#remaining").html(d['remaining']);
+          $("#purchased").html(d['purchased']);
+          }else{
+            $("#cs").hide();
+          }
+
+        }).fail(function(d){
+
+        })
+      })
+    </script> -->
+    <script src="app.js"></script>
+</body>
+</html>

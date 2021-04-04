@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ok</title>
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="static/css/style.css">
+<!------ Include the above in your HEAD tag ---------->
+<style>
+    .login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+}
+.login-form-2{
+    padding: 5%;
+    background:skyblue;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color:skyblue;
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color:skyblue;
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+    color:skyblue;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hidden {
+ display:none;
+}
+.show{
+  display: block;
+}
+.theme{
+    background: skyblue!important;
+}
+
+</style>
+</head>
+<body>
+    <!--Retrieve data-hotspot credential from the station details in your Netpap dashboard-->
+    <!--data-owner is the  company name-->
+                                                                
+    <span id="netpap-root" data-login-type="PREPAID" data-hotspot="" data-owner="" data-mac-address="$(mac)"
+                                                data-banner-name="LOGIN"></span>
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+      <input type="hidden" name="username" />
+      <input type="hidden" name="password" />
+      <input type="hidden" name="dst" value="https://google.com/" />
+      <input type="hidden" name="popup" value="true" />
+    </form>
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+    <!--
+      function doLogin() {
+      document.sendin.username.value = document.login.username.value;
+      document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+      
+      document.sendin.submit();
+      return false;
+      }
+    //-->
+    </script>
+    $(endif)
+
+
+<div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Sign in to our WIFI</h3>
+
+                    <form name="login" action="$(link-login-only)" method="post"
+                    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                    <input type="hidden" name="dst" value="https://www.google.com/" />
+                    <input type="hidden" name="popup" value="true" />
+                    <div class="form-group">
+                      <label>Username</label>
+                      <input id="username" type="text"  class="form-control" name="username" >
+                     
+    
+                    </div>
+                    <div class="form-group">
+                      <label>Password</label>
+                      <input id="password" type="password"  class="form-control" value="" name="password">
+                    </div>
+
+                    <span >
+                      <span id="referred_by_btn">
+                        <i class="glyphicon glyphicon-plus" > </i> Add referral</span>
+                      <span id="referred_by_area" data-login-type="PREPAID" class="hidden">
+                        <label>Who referred you?</label>
+                        <span id="referral-status"></span>
+                        <input id="referred_by" type="text" value=""  class="form-control" name="referred_by" >
+                      </span>
+                    </span>
+    
+                 
+                    
+                    <div class="row" style="margin-top:3%;">
+                      <div class="col-6 col-md-6 col-lg-6">
+                        <button id="btn-submit" type="submit"class="btn btn-success theme btn-block" style="color:#fffde7 !important;font-weight:800;font-size:16px;">Connect</button>
+                      </div>
+                      <div class="col-6 col-md-6  col-lg-6">
+                        
+                         <a class="btn btn-success theme btn-block" style="color:#fffde7 !important;font-weight:800;font-size:16px;" href="https://v3.netpap.co.ke/netpap/pay/<Your station name>/">Buy More.</a>
+                      
+                       
+                        
+    
+                      </div>
+    
+                    </div>
+    
+                    <div class="row" style="margin-top: 5%;">
+
+                    <div class="col-xs-8">
+                      <a class="btn theme btn-sm" href="tel:" style="color:white;font-size:15px;width:100%;"> Call
+                        for assistance</a>
+
+                    </div>
+    
+                    </div>
+                  </form>
+    
+
+
+
+
+                </div>
+                <div class="col-md-6 login-form-2 theme" id="particles-js">
+                    <p class="card-text" style="color:white;top: 150;"><a href="https://netpap.co.ke">Powered by Netpap</a></p>
+                </div>
+            </div>
+        </div>
+<script src="static/js/particles.min.js"></script>
+<script src="static/js/app.js"></script>
+<script>
+ $(document).ready(function(){
+    var url=window.location.href;
+
+    if(url.includes("?")){
+
+
+    var u=url.split("?");
+    var credentials=u[1]
+    console.log(u);
+    if (credentials.charAt(0)=="@")
+    {
+    creds=credentials.split("_");
+    username=creds[0];
+
+    password=creds[1];
+    console.log(password)
+    $("#username").val(username.substring(1));
+    if(password){
+        $("#password").val(password);
+    }
+    // console.log($("#password").val())
+
+    /* let us submit button after click */
+    setTimeout(function(){
+
+    $('button[type="submit"]').click();
+    }, 500);
+    }
+}else{
+    /* not login page  */
+}
+
+$("#btn-submit").click(function(e){
+
+  var referred_by =$("#referred_by").val();
+  
+if(referred_by.length>9){
+var data={"login_type":$("#netpap-root").attr("data-login-type"),
+        "mac":$("#netpap-root").attr("data-mac-address"),
+        "username":document.login.username.value,
+        "referred_by":referred_by,
+        "station":$("#netpap-root").attr("data-hotspot")
+        }
+$.ajax({"url":"https://v3.netpap.co.ke/api/client/sendreferral/",
+      "dataType":"json",
+      "method":"POST",
+      async: false,
+      "data":data
+      }).done(function(data){
+        console.log(1)
+       
+        if(data['id']){
+         
+          return true
+        }else{
+          
+        }
+      }).fail(function(data){
+          var a =data.responseJSON
+          $("#referral-status").html("<div class='alert alert-info'>"+a["s"]+"</div>")
+          return false;
+      })
+return false;        
+}else{
+
+return true;
+}
+})
+
+$("#referred_by_btn").click(function(){
+  var a=$("#referred_by_area");
+  if(a.hasClass("hidden")){
+    a.addClass("show");
+    a.removeClass("hidden");
+    $("#referred_by").val("07")
+  }else{
+    a.removeClass("show");
+    a.addClass("hidden");
+    $("#referred_by").val("")
+  }
+ 
+});
+})
+</script>
+</body>
+</html>
